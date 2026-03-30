@@ -72,8 +72,7 @@ export default function Home() {
     if (!content || loading) return
 
     const honeyCtx = selectedHoney.size > 0
-      ? `[أنواع العسل المختارة: ${[...selectedHoney].join("، ")}]\n\n${content}`
-      : content
+? `[أنواع العسل المختارة: ${Array.from(selectedHoney).join("، ")}]\n\n${content}`
 
     const newMessages: Message[] = [...messages, { role: "user", content: honeyCtx }]
     setMessages(newMessages)
