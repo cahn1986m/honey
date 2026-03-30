@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
         "X-Title": "Al-Asal App",
       },
       body: JSON.stringify({
-      model: "mistralai/mistral-7b-instruct:free",
+     model: "qwen/qwen-2.5-7b-instruct:free",
         max_tokens: 2048,
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
