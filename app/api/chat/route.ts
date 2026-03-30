@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
         "X-Title": "Al-Asal App",
       },
       body: JSON.stringify({
-     model: "qwen/qwen-2.5-7b-instruct:free",
+    model: "openrouter/auto",
         max_tokens: 2048,
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
