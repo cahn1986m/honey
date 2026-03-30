@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
         "Authorization": `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "glm-4.6:free",
+     model: "glm-4-flash",
         max_tokens: 2048,
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
