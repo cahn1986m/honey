@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --honey:       #e8940a;
+  --honey-light: #f9c84a;
+  --honey-dark:  #7a4500;
+  --honey-glow:  #ffb30060;
+  --wax:         #fdf3e0;
+  --comb-bg:     #0d0800;
+  --comb-mid:    #1a0f00;
+  --comb-amber:  #2a1500;
+  --text-warm:   #f5e8c0;
+  --text-dim:    #9a7a40;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Naskh Arabic', serif;
+  background: var(--comb-bg);
+  color: var(--wax);
+  direction: rtl;
+}
+
+/* Honeycomb scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--honey-dark), var(--honey));
+  border-radius: 2px;
+}
+
+/* Honey drip bar top */
+.honey-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--honey-dark) 10%,
+    var(--honey) 30%,
+    var(--honey-light) 50%,
+    var(--honey) 70%,
+    var(--honey-dark) 90%,
+    transparent
+  );
+  box-shadow: 0 0 20px var(--honey-glow);
+  z-index: 100;
+}
+
+/* Hexagon pattern background */
+.hex-bg {
+  background-color: var(--comb-bg);
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(232,148,10,0.08) 0%, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(122,69,0,0.1) 0%, transparent 50%);
+}
+
+/* Honey glow on hover */
+.honey-glow-hover:hover {
+  box-shadow: 0 0 15px rgba(232,148,10,0.25);
+}
+
+/* Floating honeycomb cells decoration */
+.hex-cell {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* Shimmer animation for honey drip */
+@keyframes honeyDrip {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.02); }
+}
+
+@keyframes floatBee {
+  0%, 100% { transform: translateY(0px) rotate(-2deg); }
+  50% { transform: translateY(-6px) rotate(2deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.bee-float {
+  animation: floatBee 3s ease-in-out infinite;
+}
+
+.honey-shimmer {
+  background: linear-gradient(90deg, var(--honey-dark) 0%, var(--honey) 40%, var(--honey-light) 50%, var(--honey) 60%, var(--honey-dark) 100%);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
