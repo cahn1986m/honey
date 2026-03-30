@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
         "X-Title": "Al-Asal App",
       },
       body: JSON.stringify({
-    model: "openrouter/auto",
+   model: "meta-llama/llama-3.3-70b-instruct:free",
         max_tokens: 2048,
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
