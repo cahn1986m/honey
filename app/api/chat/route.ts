@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
         "X-Title": "Al-Asal App",
       },
       body: JSON.stringify({
-        model: "arcee-ai/trinity-large-preview:free",
+       model: "google/gemma-3-27b-it:free",
         max_tokens: 2048,
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
